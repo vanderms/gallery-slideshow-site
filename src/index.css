@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    font-family: "Libre Baskerville", serif;
+    line-height: 1;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto;
+    max-width: 96%;
+  }
+
+  @media screen(sm) {
+    .container {
+      max-width: 20.4375rem;
+    }
+  }
+
+  @media screen(md) {
+    .container {
+      max-width: 43.0625rem;
+    }
+  }
+
+  @media screen(xl) {
+    .container {
+      max-width: 69.375rem;
+    }
+  }
+
+  @media screen(xxl) {
+    .container {
+      max-width: 85rem;
+    }
+  }
+}
