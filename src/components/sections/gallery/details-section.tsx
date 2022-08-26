@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { usePaintings } from "@/services/hooks/paintings";
 import { ConvertToURL } from "@/utilities/convert-name-to-url";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { PaintingModal } from "@/components/modals/painting-modal";
 
 export const DetailsSection: React.FC = () => {
   const { slug } = useParams();
@@ -10,6 +12,8 @@ export const DetailsSection: React.FC = () => {
     (x) => ConvertToURL(x.name) === slug
   );
   const current = paintings[currentIndex];
+
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   if (!current) {
     return (
@@ -31,7 +35,15 @@ export const DetailsSection: React.FC = () => {
 
   return (
     <>
-      <section className="mt-6 md:mt-10 xl:grid xl:grid-cols-[39.5625rem,21.875rem] xl:justify-between xl:mt-[6.25rem]">
+      <section className="pt-6 md:mt-10 xl:grid xl:grid-cols-[39.5625rem,21.875rem] xl:justify-between xl:pt-[6.25rem]">
+        <PaintingModal
+          open={showModal}
+          path={`/${current.images.gallery}`}
+          alt={current.name}
+          onClose={() => {
+            setShowModal(false);
+          }}
+        />
         <div className="md:relative">
           <div className="relative md:w-[29.6875rem]">
             <picture>
@@ -45,6 +57,7 @@ export const DetailsSection: React.FC = () => {
               className="absolute flex items-center gap-4 bg-neutral-800/75 z-20 px-4 py-3
               top-4 left-4 md:top-auto md:bottom-4 hover:bg-neutral-800/25
             "
+              onClick={() => setShowModal(true)}
             >
               <span>
                 <img src="/images/shared/icon-view-image.svg" alt="" />
