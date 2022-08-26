@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import { HomePage } from "./pages/home";
-import { DetailsPage } from "./pages/details";
-import { Header } from "./components/layout/header";
+import { HomePage } from "@/pages/home";
+import { DetailsPage } from "@/pages/details";
+import { Header } from "@/components/layout/header";
 
 function App() {
   return (

@@ -16,7 +16,7 @@ module.exports = {
       sm: "22rem",
       md: "45rem",
       xl: "74rem",
-      xxl: "90rem",
+      xxl: "87.5rem",
     },
     extend: {},
   },

@@ -31,7 +31,7 @@
 
   @media screen(xl) {
     .container {
-      max-width: 69.375rem;
+      max-width: 63.125rem;
     }
   }
 
@@ -39,5 +39,29 @@
     .container {
       max-width: 85rem;
     }
+  }
+
+  .gallery-card-caption {
+    @apply bottom-0 left-0 w-full pb-8 pl-8 gap-2 flex flex-col justify-end;
+    position: absolute;
+    height: 10.625rem;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.0001) 0%,
+      rgba(0, 0, 0, 0.841672) 100%
+    );
+  }
+
+  .gallery-card-title {
+    @apply font-bold text-neutral;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+  }
+
+  .gallery-card-author {
+    @apply text-neutral;
+    font-size: 0.8125rem;
+    line-height: 1rem;
+    opacity: 0.75;
   }
 }

@@ -1,7 +1,5 @@
-export const HomePage: React.FC = () => { 
-  return (
-    <div>
-      HomePage works!
-    </div>
-  );
+import { Gallery } from "@/components/gallery/gallery";
+
+export const HomePage: React.FC = () => {
+  return <Gallery />;
 };
