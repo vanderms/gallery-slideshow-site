@@ -1,20 +1,17 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
-const LINKS_DATA = [
-  {
-    text: "START SLIDESHOW",
-    href: "details/starry-night",
-  },
-  {
-    text: "STOP SLIDESHOW",
-    href: "/",
-  },
-];
+import { usePaintings } from "@/services/hooks/paintings";
+import { ConvertToURL } from "@/utilities/convert-name-to-url";
 
 export const Header: React.FC = () => {
   const location = useLocation();
-  const linkData = location.pathname === "/" ? LINKS_DATA[0] : LINKS_DATA[1];
+  const paintings = usePaintings();
+  const linkText =
+    location.pathname === "/" ? "START SLIDESHOW" : "STOP SLIDESHOW";
+  const linkTo =
+    location.pathname === "/"
+      ? "details/" + ConvertToURL(paintings[0].name)
+      : "/";
 
   return (
     <header className="border-b border-neutral-200 max-w-[85rem] mx-auto">
@@ -24,10 +21,10 @@ export const Header: React.FC = () => {
           <img src="/images/logo.svg" alt="" />
         </Link>
         <Link
-          to={linkData.href}
+          to={linkTo}
           className="text-neutral-500 text-[0.5625rem] font-bold md:text-[0.75rem]"
         >
-          {linkData.text}
+          {linkText}
         </Link>
       </div>
     </header>

@@ -12,6 +12,11 @@
 }
 
 @layer components {
+  #root {
+    width: 100%;
+    overflow: hidden;
+  }
+
   .container {
     @apply mx-auto;
     max-width: 96%;
@@ -39,6 +44,11 @@
     .container {
       max-width: 85rem;
     }
+  }
+
+  .full-bleed {
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
   }
 
   .gallery-card-caption {

@@ -2,7 +2,7 @@ import { usePaintings } from "@/services/hooks/paintings";
 import { Painting } from "@/services/models/paintings";
 import { useState, useEffect, useRef, useCallback } from "react";
 import produce from "immer";
-import { GalleryCard } from "../cards/gallery-card";
+import { GalleryCard } from "../../cards/gallery-card";
 
 interface ColumnProps {
   paintings: Painting[];
@@ -63,7 +63,7 @@ const initializeGalleryState = (): GalleryState => {
   return { columns: columns, cardsRendered: 0 };
 };
 
-export const Gallery: React.FC = () => {
+export const GallerySection: React.FC = () => {
   const paintings = usePaintings();
 
   const [state, setState] = useState<GalleryState>(initializeGalleryState);

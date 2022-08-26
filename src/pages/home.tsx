@@ -1,5 +1,5 @@
-import { Gallery } from "@/components/gallery/gallery";
+import { GallerySection } from "@/components/sections/gallery/gallery-section";
 
 export const HomePage: React.FC = () => {
-  return <Gallery />;
+  return <GallerySection />;
 };
