@@ -5,13 +5,15 @@ import { Header } from "./components/layout/header";
 
 function App() {
   return (
-    <div className="container">
+    <>
       <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/details/:slug" element={<DetailsPage />} />
-      </Routes>
-    </div>
+      <main className="container">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/details/:slug" element={<DetailsPage />} />
+        </Routes>
+      </main>
+    </>
   );
 }
 

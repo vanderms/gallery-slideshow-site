@@ -5,7 +5,7 @@ module.exports = {
     colors: {
       neutral: "#FFF",
       "neutral-100": "#F3F3F3",
-      "neutral-300": "#E5E5E5",
+      "neutral-200": "#E5E5E5",
       "neutral-500": "#7D7D7D",
       "neutral-800": "#000000",
       "neutral-950": "#000000",
